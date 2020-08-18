@@ -4,10 +4,15 @@ import http from "http";
 import path from "path";
 import morgan from "morgan";
 import express from "express";
+import mongoose from "mongoose";
 const app = express();
 //connect to mongodb
 const dbURI =
   "mongodb+srv://iran212:iran212@cluster0.n4lci.mongodb.net/iran212?retryWrites=true&w=majority";
+mongoose
+  .connect(dbURI, { useUnifiedTopology: true, useNewUrlParser: true })
+  .then((result) => console.log("Connected to mongodb"))
+  .catch((err) => console.log(err));
 app.set("view engine", "ejs");
 const __dirname = path.resolve(path.dirname(""));
 app.use(express.json());
