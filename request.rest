@@ -1,23 +1,47 @@
 
-GET http://localhost:3333/
+GET http://localhost:3333/all-blogs
 
 
 ###
 
-DELETE http://localhost:3333/
+GET http://localhost:3333/add-blog
+
+
+###
+
+
+GET http://localhost:3333/single-blog
+
+
+###
+
+DELETE http://localhost:3333/blogs/5f3d1ee7001bf95704b815ba
 Content-Type: application/json
 
 
 ###
 
-POST http://localhost:3333/ 
+POST http://localhost:3333/blogs
 Content-Type: application/json
 
+{
+    "title":"Alis blog",
+    "snippet":"A new blog",
+    "body":"Nice blog"
+}
+
+###
+PUT http://localhost:3333/blogs/5f3c48e715645c6a78ed7a9d
+Content-Type: application/json
+
+{
+    "title":"Alis blog",
+    "snippet":"A new blog some will be changed",
+    "body":"Changess blog"
+}
 
 ###
 
-POST http://localhost:3334/
-Content-Type: application/json
 
 
 
